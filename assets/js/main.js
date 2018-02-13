@@ -16,30 +16,35 @@
     function _setElementSize() {
       var _size = window.innerHeight > window.innerWidth ? window.innerWidth : window.innerHeight;
 
-      _nw.style.top = 0;
-      _nw.style.left = 0;
-      _nw.style.width = Math.floor(_size / 2) + 'px';
-      _nw.style.height = Math.floor(_size / 2) + 'px';
+      var _quarterSize = Math.floor(_size / 2);
+      var _aspectRatio = window.innerHeight / window.innerWidth;
 
-      _ne.style.top = 0;
-      _ne.style.left = Math.floor(_size / 2) + 'px';
-      _ne.style.width = Math.floor(_size / 2) + 'px';
-      _ne.style.height = Math.floor(_size / 2) + 'px';
+      console.log('Aspect ratio -> %s', _aspectRatio);
 
-      _sw.style.top = Math.floor(_size / 2) + 'px';
-      _sw.style.left = 0;
-      _sw.style.width = Math.floor(_size / 2) + 'px';
-      _sw.style.height = Math.floor(_size / 2) + 'px';
+      _nw.style.top = (_aspectRatio < 1 ? 0 : (window.innerHeight / 2) - _quarterSize) + 'px';
+      _nw.style.left = (_aspectRatio < 1 ? (window.innerWidth / 2) - _quarterSize : 0) + 'px';
+      _nw.style.width = _quarterSize + 'px';
+      _nw.style.height = _quarterSize + 'px';
 
-      _se.style.top = Math.floor(_size / 2) + 'px';
-      _se.style.left = Math.floor(_size / 2) + 'px';
-      _se.style.width = Math.floor(_size / 2) + 'px';
-      _se.style.height = Math.floor(_size / 2) + 'px';
+      _ne.style.top = (_aspectRatio < 1 ? 0 : (window.innerHeight / 2) - _quarterSize) + 'px';
+      _ne.style.left = (_aspectRatio < 1 ? window.innerWidth / 2 : _quarterSize) + 'px';
+      _ne.style.width = _quarterSize + 'px';
+      _ne.style.height = _quarterSize + 'px';
 
-      _center.style.top = Math.floor(_size / 2) - 75 + 'px';
-      _center.style.left = Math.floor(_size / 2) - 75 + 'px';
-      _center.style.width = 150 + 'px';
-      _center.style.height = 150 + 'px';
+      _sw.style.top = (_aspectRatio < 1 ? _quarterSize : (window.innerHeight / 2)) + 'px';
+      _sw.style.left = (_aspectRatio < 1 ? (window.innerWidth / 2) - _quarterSize : 0) + 'px';
+      _sw.style.width = _quarterSize + 'px';
+      _sw.style.height = _quarterSize + 'px';
+
+      _se.style.top = (_aspectRatio < 1 ? _quarterSize : (window.innerHeight / 2)) + 'px';
+      _se.style.left = (_aspectRatio < 1 ? window.innerWidth / 2 : _quarterSize) + 'px';
+      _se.style.width = _quarterSize + 'px';
+      _se.style.height = _quarterSize + 'px';
+
+      _center.style.top = ((window.innerHeight / 2) - 50) + 'px';
+      _center.style.left = ((window.innerWidth / 2) - 50) + 'px';
+      _center.style.width = 100 + 'px';
+      _center.style.height = 100 + 'px';
 
     }
 
