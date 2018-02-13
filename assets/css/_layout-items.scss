@@ -1,52 +1,40 @@
 .layout-item {
   box-shadow: inset 0 0 2px 3px black;
 
-  transition: background-color .25s ease-out;
+  transition: background-color .1s ease-out;
+}
+
+@mixin layout-item-color($color) {
+  background-color: darken($color, 30%);
+
+  &.active{
+    background-color: $color;
+  }
 }
 
 #nw {
   position: absolute;
   border-top-left-radius: 100%;
-
-  background-color: darken(red, 30%);
-
-  &.active, &:active{
-    background-color: red;
-  }
+  @include layout-item-color(red);
 }
 
 
 #ne {
   position: absolute;
   border-top-right-radius: 100%;
-
-  background-color: darken(blue, 30%);
-
-  &.active, &:active{
-    background-color: blue;
-  }
+  @include layout-item-color(blue);
 }
 
 #sw {
   position: absolute;
   border-bottom-left-radius: 100%;
-
-  background-color: darken(limegreen, 30%);
-
-  &.active, &:active{
-    background-color: limegreen;
-  }
+  @include layout-item-color(limegreen);
 }
 
 #se {
   position: absolute;
   border-bottom-right-radius: 100%;
-  background-color: darken(yellow, 30%);
-
-
-  &.active, &:active{
-    background-color: yellow;
-  }
+  @include layout-item-color(yellow);
 }
 
 
