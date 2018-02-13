@@ -25,10 +25,6 @@
 
   background-color: darken(blue, 30%);
 
-  &:hover{
-    background-color: darken(blue, 15%);
-  }
-
   &.active, &:active{
     background-color: blue;
   }
@@ -39,9 +35,6 @@
   border-bottom-left-radius: 100%;
 
   background-color: darken(limegreen, 30%);
-  &:hover{
-    background-color: darken(limegreen, 15%);
-  }
 
   &.active, &:active{
     background-color: limegreen;
@@ -53,9 +46,6 @@
   border-bottom-right-radius: 100%;
   background-color: darken(yellow, 30%);
   
-  &:hover{
-    background-color: darken(yellow, 15%);
-  }
 
   &.active, &:active{
     background-color: yellow;

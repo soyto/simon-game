@@ -20,8 +20,6 @@ html, body {
   position: absolute;
   border-top-right-radius: 100%;
   background-color: #000066; }
-  #ne:hover {
-    background-color: #0000b3; }
   #ne.active, #ne:active {
     background-color: blue; }
 
@@ -29,8 +27,6 @@ html, body {
   position: absolute;
   border-bottom-left-radius: 100%;
   background-color: #145214; }
-  #sw:hover {
-    background-color: #239023; }
   #sw.active, #sw:active {
     background-color: limegreen; }
 
@@ -38,8 +34,6 @@ html, body {
   position: absolute;
   border-bottom-right-radius: 100%;
   background-color: #666600; }
-  #se:hover {
-    background-color: #b3b300; }
   #se.active, #se:active {
     background-color: yellow; }
 
