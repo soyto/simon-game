@@ -9,9 +9,6 @@
   border-top-left-radius: 100%;
 
   background-color: darken(red, 30%);
-  &:hover{
-    background-color: darken(red, 15%);
-  }
 
   &.active, &:active{
     background-color: red;
@@ -45,7 +42,7 @@
   position: absolute;
   border-bottom-right-radius: 100%;
   background-color: darken(yellow, 30%);
-  
+
 
   &.active, &:active{
     background-color: yellow;
