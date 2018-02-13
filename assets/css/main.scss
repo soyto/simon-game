@@ -9,23 +9,14 @@ html, body{
 
 #nw {
   position: absolute;
-  top: 0;
-  left: 0;
-  right: 50%;
-  bottom: 50%;
-
   border-top-left-radius: 100%;
 
   background-color: red;
 }
 
+
 #ne {
   position: absolute;
-  top: 0;
-  left: 50%;
-  right: 0;
-  bottom: 50%;
-
   border-top-right-radius: 100%;
 
   background-color: blue;
@@ -33,36 +24,22 @@ html, body{
 
 #sw {
   position: absolute;
-  top: 50%;
-  left: 0;
-  right: 50%;
-  bottom: 0;
-
   border-bottom-left-radius: 100%;
-
   background-color: green;
 }
 
 #se {
   position: absolute;
-  top: 50%;
-  left: 50%;
-  right: 0;
-  bottom: 0;
-
   border-bottom-right-radius: 100%;
 
   background-color: yellow;
 }
 
+
 #center {
   position: absolute;
-  top: 40%;
-  left: 40%;
-  bottom: 40%;
-  right: 40%;
-
   border-radius: 100%;
 
   background-color: black;
 }
+
