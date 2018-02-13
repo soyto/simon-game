@@ -1,18 +1,65 @@
 (function() {
   document.addEventListener('DOMContentLoaded', function() {
 
-    var _nw = document.getElementById('nw');
-    var _ne = document.getElementById('ne');
-    var _sw = document.getElementById('sw');
-    var _se = document.getElementById('se');
+    var ELEMENTS = ['nw', 'ne', 'sw', 'se'];
+
+    var _isIATurn = true;
+
+    var _nw = document.getElementById(ELEMENTS[0]);
+    var _ne = document.getElementById(ELEMENTS[1]);
+    var _sw = document.getElementById(ELEMENTS[2]);
+    var _se = document.getElementById(ELEMENTS[3]);
     var _center = document.getElementById('center');
 
-    _setElementSize();
+    _init();
 
-    _game();
 
-    //On window resize
-    window.addEventListener('resize', _setElementSize);
+    function _init() {
+
+      //Set up listeners
+
+      //On window resize
+      window.addEventListener('resize', _setElementSize);
+
+      _nw.addEventListener('mousedown', _handleMouseDown);
+      _ne.addEventListener('mousedown', _handleMouseDown);
+      _sw.addEventListener('mousedown', _handleMouseDown);
+      _se.addEventListener('mousedown', _handleMouseDown);
+
+      _nw.addEventListener('touchstart', _handleMouseDown);
+      _ne.addEventListener('touchstart', _handleMouseDown);
+      _sw.addEventListener('touchstart', _handleMouseDown);
+      _se.addEventListener('touchstart', _handleMouseDown);
+
+      _nw.addEventListener('mouseup', _handleMouseUp);
+      _ne.addEventListener('mouseup', _handleMouseUp);
+      _sw.addEventListener('mouseup', _handleMouseUp);
+      _se.addEventListener('mouseup', _handleMouseUp);
+
+      _nw.addEventListener('touchend', _handleMouseUp);
+      _ne.addEventListener('touchend', _handleMouseUp);
+      _sw.addEventListener('touchend', _handleMouseUp);
+      _se.addEventListener('touchend', _handleMouseUp);
+
+      //Set element size
+      _setElementSize();
+
+      //Start game
+      _clockWiseLoops(5, 100).then(function() {
+        _isIATurn = false;
+      });
+    }
+
+    function _handleMouseDown(event) {
+      if(_isIATurn) { return; }
+      this.classList.add('active');
+    }
+
+    function _handleMouseUp(event) {
+      if(_isIATurn) { return; }
+      this.classList.remove('active');
+    }
+
 
     function _setElementSize() {
       var _size = window.innerHeight > window.innerWidth ? window.innerWidth : window.innerHeight;
@@ -93,42 +140,5 @@
         case 'se': return _se;
       }
     }
-
-    _nw.addEventListener('mousedown', _handleMouseDown);
-    _ne.addEventListener('mousedown', _handleMouseDown);
-    _sw.addEventListener('mousedown', _handleMouseDown);
-    _se.addEventListener('mousedown', _handleMouseDown);
-
-    _nw.addEventListener('touchstart', _handleMouseDown);
-    _ne.addEventListener('touchstart', _handleMouseDown);
-    _sw.addEventListener('touchstart', _handleMouseDown);
-    _se.addEventListener('touchstart', _handleMouseDown);
-
-    _nw.addEventListener('mouseup', _handleMouseUp);
-    _ne.addEventListener('mouseup', _handleMouseUp);
-    _sw.addEventListener('mouseup', _handleMouseUp);
-    _se.addEventListener('mouseup', _handleMouseUp);
-
-    _nw.addEventListener('touchend', _handleMouseUp);
-    _ne.addEventListener('touchend', _handleMouseUp);
-    _sw.addEventListener('touchend', _handleMouseUp);
-    _se.addEventListener('touchend', _handleMouseUp);
-
-
-    function _handleMouseDown(event) {
-      this.classList.add('active');
-    }
-
-    function _handleMouseUp(event) {
-      this.classList.remove('active');
-    }
-
-
-    function _game() {
-
-
-      _clockWiseLoops(5, 100);
-    }
-
   });
 })();
