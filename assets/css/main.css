@@ -3,25 +3,45 @@ html, body {
   margin: 0;
   background-color: black; }
 
+.layout-item {
+  box-shadow: inset 0 0 2px 3px black;
+  transition: background-color .25s ease-out; }
+
 #nw {
   position: absolute;
   border-top-left-radius: 100%;
-  background-color: red; }
+  background-color: #660000; }
+  #nw:hover {
+    background-color: #b30000; }
+  #nw.active, #nw:active {
+    background-color: red; }
 
 #ne {
   position: absolute;
   border-top-right-radius: 100%;
-  background-color: blue; }
+  background-color: #000066; }
+  #ne:hover {
+    background-color: #0000b3; }
+  #ne.active, #ne:active {
+    background-color: blue; }
 
 #sw {
   position: absolute;
   border-bottom-left-radius: 100%;
-  background-color: green; }
+  background-color: #145214; }
+  #sw:hover {
+    background-color: #239023; }
+  #sw.active, #sw:active {
+    background-color: limegreen; }
 
 #se {
   position: absolute;
   border-bottom-right-radius: 100%;
-  background-color: yellow; }
+  background-color: #666600; }
+  #se:hover {
+    background-color: #b3b300; }
+  #se.active, #se:active {
+    background-color: yellow; }
 
 #center {
   position: absolute;

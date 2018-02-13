@@ -1,3 +1,8 @@
+
+@import '_mixins.scss';
+
+
+
 html, body{
   padding: 0;
   margin: 0;
@@ -5,39 +10,4 @@ html, body{
   background-color: black;
 }
 
-#nw {
-  position: absolute;
-  border-top-left-radius: 100%;
-
-  background-color: red;
-}
-
-
-#ne {
-  position: absolute;
-  border-top-right-radius: 100%;
-
-  background-color: blue;
-}
-
-#sw {
-  position: absolute;
-  border-bottom-left-radius: 100%;
-  background-color: green;
-}
-
-#se {
-  position: absolute;
-  border-bottom-right-radius: 100%;
-
-  background-color: yellow;
-}
-
-
-#center {
-  position: absolute;
-  border-radius: 100%;
-
-  background-color: black;
-}
-
+@import '_layout-items.scss';

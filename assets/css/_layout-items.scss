@@ -1,0 +1,70 @@
+.layout-item {
+  box-shadow: inset 0 0 2px 3px black;
+
+  transition: background-color .25s ease-out;
+}
+
+#nw {
+  position: absolute;
+  border-top-left-radius: 100%;
+
+  background-color: darken(red, 30%);
+  &:hover{
+    background-color: darken(red, 15%);
+  }
+
+  &.active, &:active{
+    background-color: red;
+  }
+}
+
+
+#ne {
+  position: absolute;
+  border-top-right-radius: 100%;
+
+  background-color: darken(blue, 30%);
+
+  &:hover{
+    background-color: darken(blue, 15%);
+  }
+
+  &.active, &:active{
+    background-color: blue;
+  }
+}
+
+#sw {
+  position: absolute;
+  border-bottom-left-radius: 100%;
+
+  background-color: darken(limegreen, 30%);
+  &:hover{
+    background-color: darken(limegreen, 15%);
+  }
+
+  &.active, &:active{
+    background-color: limegreen;
+  }
+}
+
+#se {
+  position: absolute;
+  border-bottom-right-radius: 100%;
+  background-color: darken(yellow, 30%);
+  
+  &:hover{
+    background-color: darken(yellow, 15%);
+  }
+
+  &.active, &:active{
+    background-color: yellow;
+  }
+}
+
+
+#center {
+  position: absolute;
+  border-radius: 100%;
+  background-color: black;
+}

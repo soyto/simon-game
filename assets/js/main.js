@@ -19,8 +19,6 @@
       var _quarterSize = Math.floor(_size / 2);
       var _aspectRatio = window.innerHeight / window.innerWidth;
 
-      console.log('Aspect ratio -> %s', _aspectRatio);
-
       _nw.style.top = (_aspectRatio < 1 ? 0 : (window.innerHeight / 2) - _quarterSize) + 'px';
       _nw.style.left = (_aspectRatio < 1 ? (window.innerWidth / 2) - _quarterSize : 0) + 'px';
       _nw.style.width = _quarterSize + 'px';
